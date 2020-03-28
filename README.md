@@ -22,3 +22,27 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: ture|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|password_confirmation|string|null: false|
+
+### Association
+- has_many :memos
+
+
+## memosテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|text|
+|text|string|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user

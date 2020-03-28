@@ -7,11 +7,13 @@
       .upper-info__contents__form__submit
         %input{type: "submit", class: "submit-btn"}
     .upper-info__contents__menus
-      .upper-info__contents__menus__name 三谷宥太
+      .upper-info__contents__menus__name
+        = current_user.name
       .upper-info__contents__menus__menu1
         = icon('far', 'edit')
       .upper-info__contents__menus__menu2
-        = icon('fa', 'cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fa', 'cog')
 
 
 .main-contents

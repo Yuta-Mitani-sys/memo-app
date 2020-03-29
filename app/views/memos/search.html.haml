@@ -1,16 +1,18 @@
 .upper-info
   .upper-info__contents
-    .upper-info__contents__logo
-      = current_user.name + "さんのマイページ"
+    .upper-info__contents__logo 検索結果
     .upper-info__contents__form
       .upper-info__contents__form__input
         = form_with url: search_memos_path, local: true, method: :get, class: "search-form" do |form|
           = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
           = form.submit "検索", class: "search-btn"
+        -# %input{type: "text", class: "input-box-text", placeholder: 'type a ○ ○'}
+      .upper-info__contents__form__submit
+        -# %input{type: "submit", class: "submit-btn"}
     .upper-info__contents__menus
       .upper-info__contents__menus__name
-        = link_to root_path do
-          一覧
+        = link_to user_path(current_user) do
+          = current_user.name
       .upper-info__contents__menus__menu1
         = link_to new_memo_path do
           = icon('far', 'edit')

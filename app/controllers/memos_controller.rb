@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  
+
   def index
     @memos = Memo.all
   end
@@ -9,8 +9,11 @@ class MemosController < ApplicationController
   end
 
   def create
-    binding.pry
     Memo.create(memo_params)
+  end
+
+  def search
+    @memos = Memo.search(params[:keyword])
   end
 
   private

@@ -18,24 +18,22 @@ a {
     display: flex;
     justify-content: space-between;
     &__logo {
+      width: 300px;
       font-size: 20px;
       color: #ffffff;
     }
     &__form {
       height: 30px;
-      width: 400px;
+      width: 500px;
       display: flex;
+      margin-left: 30px;
       &__input {
-        .input-box-text {
+        .search-input {
           width: 350px;
-          margin-left: 80px;
         }
-      }
-      &__submit {
-        margin-left: 8px;
-        .submit-btn {
-          height: 40px;
+        .search-btn {
           width: 50px;
+          margin-left: 10px;
         }
       }
     }
@@ -46,7 +44,7 @@ a {
       &__name {
         width: 100px;
         margin-left: 100px;
-        margin-right: 50px;
+        margin-right: 10px;
       }
       &__menu1 {
         margin-right: 8px;
@@ -67,4 +65,16 @@ a {
       margin-bottom: 20px;
     }
   }
+}
+
+.btn-list {
+  height: 50px;
+  width: 400px;
+  background-color: black;
+}
+
+.btn-user {
+  height: 50px;
+  width: 400px;
+  background-color: black;
 }

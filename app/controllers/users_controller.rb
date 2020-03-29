@@ -11,11 +11,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    user = User.find(params[:id])
+    @name = current_user.name
+    @memos = user.memos
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
-  
+
 end
 

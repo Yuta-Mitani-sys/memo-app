@@ -1,0 +1,6 @@
+.contents
+  .contents_form
+    = form_for @memo do |f|
+      = f.text_field :title, class: 'contents_form_title', placeholder: 'type a title'
+      = f.text_field :text, class: 'contents_form_title', placeholder: 'type a text'
+      = f.submit 'Send', class: 'contents_form_submit-btn'

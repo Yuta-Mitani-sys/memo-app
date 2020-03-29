@@ -12,7 +12,8 @@
         = link_to root_path do
           一覧
       .upper-info__contents__menus__menu1
-        = icon('far', 'edit')
+        = link_to new_memo_path do
+          = icon('far', 'edit')
       .upper-info__contents__menus__menu2
         = link_to edit_user_path(current_user) do
           = icon('fa', 'cog')

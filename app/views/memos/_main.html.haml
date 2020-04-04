@@ -21,6 +21,13 @@
 .main-contents
   .main-contents__box
     - @memos.each do |memo|
-      .main-contents__box__memo
-        = simple_format(memo.title)
-        = simple_format(memo.text)
+      - if memo.complete == true
+        .main-contents__box__memo
+          .main-contents__box__memo__title
+            .main-contents__box__memo__title__type
+              = simple_format(memo.title)
+          .main-contents__box__memo__text
+            .main-contents__box__memo__text__type
+              = simple_format(memo.text)
+      - else
+    = paginate(@memos)

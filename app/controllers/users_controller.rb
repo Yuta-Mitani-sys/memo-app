@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     @name = current_user.name
-    @memos = user.memos
+    @memos = user.memos.page(params[:page]).per(5).order("created_at DESC")
   end
 
   private

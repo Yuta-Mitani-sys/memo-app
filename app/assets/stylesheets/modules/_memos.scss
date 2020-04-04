@@ -3,7 +3,7 @@
 }
 a {
   color: #ffffff;
-  
+  text-decoration: none;
 }
 .wrapper {
   height: 100vh;
@@ -56,13 +56,49 @@ a {
 .main-contents {
   height: calc(100vh - 100px);
   background-color: gray;
-  padding: 20px;
-  overflow: scroll;
+  // padding: 40px;
+  // overflow: scroll;
   &__box {
     &__memo {
-      height: 100px;
+      margin: 0 auto;
+      height: 500px;
+      width: 800px;
       background-color: khaki;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      padding: 30px;
+      // display: flex;
+      // justify-content: space-between;
+      // &__edit {
+      //   height: 30px;
+      //   width: 100px;
+      //   background-color: black;
+      // }
+      // &__delete {
+      //   height: 30px;
+      //   width: 100px;
+      //   background-color: black;
+      //   margin-right: 7px;
+      //   margin-top: 7px;
+      // }
+      &__title {
+        height: 50px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+        padding: 10px;
+        &__type {
+          height: 30px;
+          font-size: 18px;
+        }
+      }
+      &__text {
+        height: 380px;
+        background-color: #ffffff;
+        padding: 10px;
+        overflow: scroll;
+        &__type {
+          height: 360px;
+        }
+      }
     }
   }
 }
@@ -77,4 +113,120 @@ a {
   height: 50px;
   width: 400px;
   background-color: black;
+}
+
+
+.main-contents {
+  height: calc(100vh - 100px);
+  background-color: gray;
+  padding: 40px;
+  overflow: scroll;
+  &__box {
+    &__my-memo {
+      margin: 0 auto;
+      height: 500px;
+      width: 800px;
+      background-color: khaki;
+      margin-bottom: 40px;
+      padding: 30px;
+      // display: flex;
+      // justify-content: space-between;
+      &__title {
+        height: 50px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      &__text {
+        height: 380px;
+        background-color: #ffffff;
+        padding: 10px;
+        overflow: scroll;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__edit {
+        height: 30px;
+        width: 40px;
+        text-align: center;
+        background-color: black;
+      }
+      &__delete {
+        height: 30px;
+        width: 40px;
+        background-color: black;
+        text-align: center;
+        margin-top: 7px;
+      }
+    }
+  }
+}
+
+
+.new-contents {
+  height: 100px;
+  background-color: #2f3e51;
+  padding: 20px;
+  color: #ffffff;
+  &__title {
+    font-size: 40px;
+  }
+  &__form {
+    height: calc(100vh - 100px);
+    background-color: gray;
+    padding: 50px;
+    &__area {
+      height: calc(100vh - 200px);
+      width:900px;
+      margin: 0 auto;
+      background-color: khaki;
+      &__check-box {
+        height: 50px;
+        font-size: 20px;
+        text-align: center;
+      }
+      &__title {
+        height: 50px;
+        text-align: center;
+        #memo_title {
+          height: 50px;
+          width: 800px;
+        }
+      }
+      &__text {
+        height: 360px;
+        text-align: center;
+        #memo_text {
+          height: 360px;
+          width: 800px;
+          margin-top: 10px;
+        }
+      }
+      &__send {
+        height: 50px;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        &__btn {
+          height: 50px;
+          width: 200px;
+          margin-right: 5px;
+          font-size: 15px;
+        }
+        &__back {
+          height: 50px;
+          width: 200px;
+          background-color: #ffffff;
+          margin-left: 5px;
+          display: flex;
+          align-items: center;
+          background-color: blueviolet;
+          &__btn {
+            margin: 10px auto;
+          }
+        }
+      }
+    }
+  }
 }

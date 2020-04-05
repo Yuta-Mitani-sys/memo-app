@@ -12,7 +12,7 @@ a {
 
 .upper-info {
   height: 100px;
-  background-color: #2f3e51;
+  background-color: #136FFF;
   padding: 30px;
   &__contents {
     display: flex;
@@ -55,7 +55,7 @@ a {
 }
 .main-contents {
   height: calc(100vh - 100px);
-  background-color: gray;
+  background-color: #8EB8FF;
   // padding: 40px;
   // overflow: scroll;
   &__box {
@@ -63,31 +63,28 @@ a {
       margin: 0 auto;
       height: 500px;
       width: 800px;
-      background-color: khaki;
+      background-color: #EEEEEE;
       margin-bottom: 40px;
       padding: 30px;
-      // display: flex;
-      // justify-content: space-between;
-      // &__edit {
-      //   height: 30px;
-      //   width: 100px;
-      //   background-color: black;
-      // }
-      // &__delete {
-      //   height: 30px;
-      //   width: 100px;
-      //   background-color: black;
-      //   margin-right: 7px;
-      //   margin-top: 7px;
-      // }
+      &__name {
+        line-height: 0px;
+        margin-bottom: 15px;
+        &__type {
+          width: 100px;
+          margin: 0 auto;
+          a {
+            color: black;
+          }
+        }
+      }
       &__title {
-        height: 50px;
+        height: 40px;
         background-color: #ffffff;
         margin-bottom: 10px;
         padding: 10px;
         &__type {
           height: 30px;
-          font-size: 18px;
+          font-size: 15px;
         }
       }
       &__text {
@@ -118,7 +115,7 @@ a {
 
 .main-contents {
   height: calc(100vh - 100px);
-  background-color: gray;
+  background-color: #8EB8FF;
   padding: 40px;
   overflow: scroll;
   &__box {
@@ -126,13 +123,13 @@ a {
       margin: 0 auto;
       height: 500px;
       width: 800px;
-      background-color: khaki;
+      background-color: #EEEEEE;
       margin-bottom: 40px;
       padding: 30px;
       // display: flex;
       // justify-content: space-between;
       &__title {
-        height: 50px;
+        height: 40px;
         background-color: #ffffff;
         margin-bottom: 10px;
         padding: 10px;
@@ -142,21 +139,45 @@ a {
         background-color: #ffffff;
         padding: 10px;
         overflow: scroll;
-        display: flex;
-        justify-content: space-between;
-      }
-      &__edit {
-        height: 30px;
-        width: 40px;
-        text-align: center;
-        background-color: black;
-      }
-      &__delete {
-        height: 30px;
-        width: 40px;
-        background-color: black;
-        text-align: center;
-        margin-top: 7px;
+        // display: flex;
+        // justify-content: space-between;
+        &__type {
+          height: 300px;
+          width: 700px;
+          overflow: scroll;
+        }
+        &__contents {
+          height: 50px;
+          width: 400px;
+          display: flex;
+          &__show {
+            height: 30px;
+            width: 40px;
+            text-align: center;
+            line-height: 30px;
+            margin-top: 7px;
+            background-color: black;
+          }
+          &__edit {
+            height: 30px;
+            width: 40px;
+            text-align: center;
+            line-height: 30px;
+            margin-top: 7px;
+            margin-left: 7px;
+            background-color: black;
+          }
+          &__delete {
+            height: 30px;
+            width: 40px;
+            background-color: black;
+            text-align: center;
+            margin-top: 7px;
+            margin-left: 7px;
+            margin-right: 7px;
+            line-height: 30px;
+          }
+        }
       }
     }
   }
@@ -165,7 +186,7 @@ a {
 
 .new-contents {
   height: 100px;
-  background-color: #2f3e51;
+  background-color: #136FFF;
   padding: 20px;
   color: #ffffff;
   &__title {
@@ -173,13 +194,13 @@ a {
   }
   &__form {
     height: calc(100vh - 100px);
-    background-color: gray;
+    background-color: #8EB8FF;
     padding: 50px;
     &__area {
       height: calc(100vh - 200px);
       width:900px;
       margin: 0 auto;
-      background-color: khaki;
+      background-color: #EEEEEE;
       &__check-box {
         height: 50px;
         font-size: 20px;
@@ -225,6 +246,50 @@ a {
           &__btn {
             margin: 10px auto;
           }
+        }
+      }
+    }
+  }
+}
+
+.create-contents {
+  height: calc(100vh - 100px);
+  background-color: #8EB8FF;
+  padding: 50px;
+  &__menu {
+    height: calc(100vh - 200px);
+    width: 900px;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+    padding: 30px;
+    &__btn {
+      height: calc(100vh - 260px);
+      padding: 50px;
+      &__list {
+        background-color: #75A9FF;
+        height: 180px;
+        width: 500px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        &__box {
+          height: 50px;
+          width: 210px;
+          font-size: 40px;
+          margin: 0 auto;
+          line-height: 180px;
+        }
+      }
+      &__my-page {
+        background-color: #75A9FF;
+        height: 180px;
+        width: 500px;
+        margin: 0 auto;
+        &__box {
+          height: 50px;
+          width: 313px;
+          font-size: 40px;
+          margin: 0 auto;
+          line-height: 180px;
         }
       }
     }

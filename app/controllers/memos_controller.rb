@@ -12,6 +12,10 @@ class MemosController < ApplicationController
     Memo.create(memo_params)
   end
 
+  def show
+    @memo = Memo.find(params[:id])
+  end
+
   def edit
     @memo = Memo.find(params[:id])
   end
@@ -30,6 +34,7 @@ class MemosController < ApplicationController
 
   def search
     @memos = Memo.search(params[:keyword])
+    @memo = Memo.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   private

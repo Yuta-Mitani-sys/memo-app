@@ -8,9 +8,9 @@
         = f.label "公開"
         = f.check_box :complete
       .new-contents__form__area__title
-        = f.text_field :title, class: 'new-contents__form__title-area', placeholder: 'type a title'
+        = f.text_field :title, class: 'new-contents__form__title-area', placeholder: 'type a title', required: "required"
       .new-contents__form__area__text
-        = f.text_area :text, class: 'new-contents__form__text-area', placeholder: 'type a text'
+        = f.text_area :text, class: 'new-contents__form__text-area', placeholder: 'type a text', required: "required"
       .new-contents__form__area__send
         = f.button '送信', class: 'new-contents__form__area__send__btn', onclick: "submit();", type: "button"
         .new-contents__form__area__send__back

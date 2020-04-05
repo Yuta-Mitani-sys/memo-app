@@ -26,6 +26,10 @@
     - @memos.each do |memo|
       - if memo.complete == true
         .main-contents__box__memo
+          .main-contents__box__memo__name
+            .main-contents__box__memo__name__type
+              = link_to user_path(memo.user_id) do
+                = simple_format(memo.user.name)
           .main-contents__box__memo__title
             .main-contents__box__memo__title__type
               = simple_format(memo.title)
@@ -33,4 +37,4 @@
             .main-contents__box__memo__text__type
               = simple_format(memo.text)
       - else
-      
+    = paginate(@memo)

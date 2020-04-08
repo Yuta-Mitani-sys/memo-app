@@ -30,3 +30,24 @@
       .main-contents__box__my-memo__text
         .main-contents__box__my-memo__text__type
           = simple_format(@memo.text)
+  .comment-form
+    .comment-form__box
+      - if current_user
+        = form_with(model: [@memo, @comment], local: true) do |form|
+          .comment-form__box__text
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+          .comment-form__box__btn
+            = form.button '送信', class: 'comment-form__box__btn__send', onclick: "submit();", type: "button"
+      - else
+        コメントの投稿には新規登録/ログインが必要です
+  .comments
+    .comments__box
+      ＜コメント一覧＞
+      .comments__box__list
+        - if @comments
+          - @comments.each do |comment|
+            .comments__box__list__display
+              .comments__box__list__display__name
+                = link_to comment.user.name, "/users/#{comment.user_id}"
+              .comments__box__list__display__text
+                = comment.text

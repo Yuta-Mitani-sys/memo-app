@@ -33,12 +33,18 @@
           .main-contents__box__my-memo__text__type
             = simple_format(memo.text)
           .main-contents__box__my-memo__text__contents
-            - if user_signed_in? && current_user.id == memo.user_id
-              .main-contents__box__my-memo__text__contents__show
+            .main-contents__box__my-memo__text__contents__list
+              .main-contents__box__my-memo__text__contents__list__show
                 = link_to "詳細", "/memos/#{memo.id}", method: :get
-              .main-contents__box__my-memo__text__contents__edit
-                = link_to "編集", "/memos/#{memo.id}/edit", method: :get
-              .main-contents__box__my-memo__text__contents__delete
-                = link_to "削除", "/memos/#{memo.id}", method: :delete
-
+              - if user_signed_in? && current_user.id == memo.user_id
+                .main-contents__box__my-memo__text__contents__list__edit
+                  = link_to "編集", "/memos/#{memo.id}/edit", method: :get
+                .main-contents__box__my-memo__text__contents__list__delete
+                  = link_to "削除", "/memos/#{memo.id}", method: :delete
+            .main-contents__box__my-memo__text__contents__comment
+              - if memo.show_last_comment == current_user.id || memo.show_last_comment == 'コメントはありません'
+                
+              - else memo.show_last_comment != current_user.id
+                .main-contents__box__my-memo__text__contents__comment__new
+                  new
     = paginate(@memos)

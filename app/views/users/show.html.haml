@@ -1,6 +1,7 @@
 .upper-info
   .upper-info__contents
-    .upper-info__contents__logo memo-app
+    .upper-info__contents__logo
+      = @name
     .upper-info__contents__form
       .upper-info__contents__form__input
         = form_with url: search_memos_path, local: true, method: :get, class: "search-form" do |form|
@@ -10,12 +11,13 @@
       .upper-info__contents__menus__name
         = link_to root_path do
           投稿一覧
-      .upper-info__contents__menus__menu1
-        = link_to new_memo_path do
-          = icon('far', 'edit')
-      .upper-info__contents__menus__menu2
-        = link_to edit_user_path(current_user) do
-          = icon('fa', 'cog')
+      .upper-info__contents__menus__menu-box
+        .upper-info__contents__menus__menu-box__menu1
+          = link_to new_memo_path do
+            = icon('far', 'edit')
+        .upper-info__contents__menus__menu-box__menu2
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog')
 
 
 .main-contents

@@ -10,12 +10,13 @@
       .upper-info__contents__menus__name
         = link_to user_path(current_user) do
           = current_user.name
-      .upper-info__contents__menus__menu1
-        = link_to new_memo_path do
-          = icon('far', 'edit')
-      .upper-info__contents__menus__menu2
-        = link_to edit_user_path(current_user) do
-          = icon('fa', 'cog')
+      .upper-info__contents__menus__menu-box
+        .upper-info__contents__menus__menu-box__menu1
+          = link_to new_memo_path do
+            = icon('far', 'edit')
+        .upper-info__contents__menus__menu-box__menu2
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog')
 
 
 .main-contents

@@ -23,30 +23,59 @@
 .main-contents
   .main-contents__box
     - @memos.each do |memo|
-      .main-contents__box__my-memo
-        .main-contents__box__memo__name
-          .main-contents__box__memo__name__type
-            = link_to user_path(memo.user_id) do
-              = simple_format(memo.user.name)
-        .main-contents__box__my-memo__title
-          .main-contents__box__my-memo__title__type
-            = simple_format(memo.title)
-        .main-contents__box__my-memo__text
-          .main-contents__box__my-memo__text__type
-            = simple_format(memo.text)
-          .main-contents__box__my-memo__text__contents
-            .main-contents__box__my-memo__text__contents__list
-              .main-contents__box__my-memo__text__contents__list__show
-                = link_to "詳細", "/memos/#{memo.id}", method: :get
-              - if user_signed_in? && current_user.id == memo.user_id
-                .main-contents__box__my-memo__text__contents__list__edit
-                  = link_to "編集", "/memos/#{memo.id}/edit", method: :get
-                .main-contents__box__my-memo__text__contents__list__delete
-                  = link_to "削除", "/memos/#{memo.id}", method: :delete
-            .main-contents__box__my-memo__text__contents__comment
-              - if memo.show_last_comment == current_user.id || memo.show_last_comment == 'コメントはありません'
-                
-              - else memo.show_last_comment != current_user.id
-                .main-contents__box__my-memo__text__contents__comment__new
-                  new
+      - if user_signed_in? && current_user.id == memo.user_id
+        .main-contents__box__my-memo
+          .main-contents__box__memo__name
+            .main-contents__box__memo__name__type
+              = link_to user_path(memo.user_id) do
+                = simple_format(memo.user.name)
+          .main-contents__box__my-memo__title
+            .main-contents__box__my-memo__title__type
+              = simple_format(memo.title)
+          .main-contents__box__my-memo__text
+            .main-contents__box__my-memo__text__type
+              = simple_format(memo.text)
+            .main-contents__box__my-memo__text__contents
+              .main-contents__box__my-memo__text__contents__list
+                .main-contents__box__my-memo__text__contents__list__show
+                  = link_to "詳細", "/memos/#{memo.id}", method: :get
+                - if user_signed_in? && current_user.id == memo.user_id
+                  .main-contents__box__my-memo__text__contents__list__edit
+                    = link_to "編集", "/memos/#{memo.id}/edit", method: :get
+                  .main-contents__box__my-memo__text__contents__list__delete
+                    = link_to "削除", "/memos/#{memo.id}", method: :delete
+              .main-contents__box__my-memo__text__contents__comment
+                - if memo.show_last_comment == current_user.id || memo.show_last_comment == 'コメントはありません'
+                  
+                - else memo.show_last_comment != current_user.id
+                  .main-contents__box__my-memo__text__contents__comment__new
+                    new
+      - else
+        - if memo.complete == true
+          .main-contents__box__my-memo
+            .main-contents__box__memo__name
+              .main-contents__box__memo__name__type
+                = link_to user_path(memo.user_id) do
+                  = simple_format(memo.user.name)
+            .main-contents__box__my-memo__title
+              .main-contents__box__my-memo__title__type
+                = simple_format(memo.title)
+            .main-contents__box__my-memo__text
+              .main-contents__box__my-memo__text__type
+                = simple_format(memo.text)
+              .main-contents__box__my-memo__text__contents
+                .main-contents__box__my-memo__text__contents__list
+                  .main-contents__box__my-memo__text__contents__list__show
+                    = link_to "詳細", "/memos/#{memo.id}", method: :get
+                  - if user_signed_in? && current_user.id == memo.user_id
+                    .main-contents__box__my-memo__text__contents__list__edit
+                      = link_to "編集", "/memos/#{memo.id}/edit", method: :get
+                    .main-contents__box__my-memo__text__contents__list__delete
+                      = link_to "削除", "/memos/#{memo.id}", method: :delete
+                .main-contents__box__my-memo__text__contents__comment
+                  - if memo.show_last_comment == current_user.id || memo.show_last_comment == 'コメントはありません'
+                    
+                  - else memo.show_last_comment != current_user.id
+                    .main-contents__box__my-memo__text__contents__comment__new
+                      new
     = paginate(@memos)

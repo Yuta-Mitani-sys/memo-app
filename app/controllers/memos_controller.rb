@@ -35,8 +35,7 @@ class MemosController < ApplicationController
   end
 
   def search
-    @memos = Memo.search(params[:keyword])
-    @memo = Memo.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @memos = Memo.search(params[:keyword]).includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   private
